@@ -10,6 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    @IBOutlet weak var tipControl: UISegmentedControl!
+
+    @IBOutlet weak var tipAmount: UILabel!
+    @IBOutlet weak var totalAmount: UILabel!
+    @IBOutlet weak var enteredAmount: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +27,30 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func onTap(_ sender: Any) {
+        view.endEditing(true)
+    }
+
+    
+    @IBAction func SettingsButton(_ sender: Any) {
+        print("Subhay")
+    }
+    
+
+    
+    
+    
+    @IBAction func calculateTip(_ sender: Any) {
+        
+        let tipPercent = [0.15, 0.18, 0.20]
+        
+        let amount = Double(enteredAmount.text!) ?? 0
+        let tip = amount*tipPercent[tipControl.selectedSegmentIndex]
+        let total = amount + tip
+        
+        tipAmount.text = String(format: "$%.2f", tip)
+        totalAmount.text = String(format: "$%.2f", total)
+    }
 
 }
 
