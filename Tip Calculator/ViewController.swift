@@ -27,10 +27,17 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+//    @IBAction func onTap(_ sender: Any) {
+//        view.endEditing(true)
+//        print("tapped")
+//    }
+
+    
     @IBAction func onTap(_ sender: Any) {
+        print("tapped")
         view.endEditing(true)
     }
-
+    
     
     @IBAction func SettingsButton(_ sender: Any) {
         print("Subhay")
@@ -40,7 +47,7 @@ class ViewController: UIViewController {
     
     
     
-    @IBAction func calculateTip(_ sender: Any) {
+    @IBAction func calculateTip(_ sender: AnyObject) {
         
         let tipPercent = [0.15, 0.18, 0.20]
         

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zY6-iZ-CpH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zY6-iZ-CpH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -79,6 +79,9 @@
                                     <segment title="18%"/>
                                     <segment title="20%"/>
                                 </segments>
+                                <connections>
+                                    <action selector="calculateTip:" destination="Pv0-kr-yHk" eventType="valueChanged" id="Rdo-Ly-mdB"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -97,6 +100,9 @@
                             <constraint firstItem="1Zs-YE-fLc" firstAttribute="top" secondItem="qEz-aQ-LpI" secondAttribute="bottom" constant="8" id="tUY-eZ-xCf"/>
                             <constraint firstItem="VZl-rL-zga" firstAttribute="top" secondItem="VUj-HI-0oN" secondAttribute="bottom" constant="8" id="uce-sr-OYC"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Hs9-FT-szb" appends="YES" id="956-3R-d3H"/>
+                        </connections>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Tip Calculator" id="DvN-fu-0XF">
@@ -116,6 +122,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KRJ-yy-8Dn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Hs9-FT-szb">
+                    <connections>
+                        <action selector="onTap:" destination="Pv0-kr-yHk" id="YBH-oS-5Qt"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1901.5999999999999" y="357.57121439280365"/>
         </scene>
